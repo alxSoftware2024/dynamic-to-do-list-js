@@ -11,12 +11,24 @@ function addTask()
     {
         const li=document.createElement('li');
         li.textContent=taskText;
-        // Create the button element
+//Create the button element
   const removeButton = document.createElement('button');
-// Set the text content
+//Set the text content
   removeButton.textContent = 'Remove';
-// Add the class name
+//Add the class name
   removeButton.className = 'remove-btn';
+//Assign the onclick event to remove the li
+   removeButton.onclick = function() {
+    taskList.removeChild(li);
+};
+//Append the remove button to the li
+li.appendChild(removeButton);
+
+//Append the li to the task list
+taskList.appendChild(li);
+
+// Clear the task input field
+taskInput.value = '';
     }
     else
     {
@@ -24,4 +36,5 @@ function addTask()
 
     }
 }
+addButton.addEventListener('clicked',addTask);
 });
