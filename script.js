@@ -14,7 +14,7 @@ function addTask()
 //Set the text content
   removeButton.textContent = 'Remove';
 //Add the class name
-  removeButton.className = 'remove-btn';
+removeButton.classList.add('remove-btn'); // Using classList.add to add class
 //Assign the onclick event to remove the li
    removeButton.onclick = function() {
     taskList.removeChild(li);
