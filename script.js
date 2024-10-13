@@ -1,6 +1,4 @@
-//DOM document loaded
-document.addEventListener('DOMContentLoaded',function()
-{
+
 const addButton=document.getElementById('Add Task');
 const taskInput=document.getElementById('task-input');
 const taskList=document.getElementById('task-list');
@@ -37,4 +35,13 @@ taskInput.value = '';
     }
 }
 addButton.addEventListener('clicked',addTask);
+taskInput.addEventListener('keypress',function(event){
+if(event.key==='Enter')
+{
+    addTask();   
+}
+});
+// Invoke addTask on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    addTask();
 });
